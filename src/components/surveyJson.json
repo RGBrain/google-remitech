@@ -1,0 +1,321 @@
+{
+  "pageNextText": "Next",
+  "pagePrevText": "Previous",
+  "completeText": "Submit",
+  "requiredMark": "(Required)",
+  "pages": [
+    {
+      "name": "page1",
+      "elements": [
+        {
+          "type": "text",
+          "name": "q1_business_organsation_name",
+          "title": "What's your business or organisation name?",
+          "isRequired": true
+        },
+        {
+          "type": "radiogroup",
+          "name": "q2_desktop_laptop_decision_making",
+          "title": "Are you involved in desktop, laptop or other user device decision making or purchasing in your organisation?",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "Yes",
+              "text": "Yes"
+            },
+            {
+              "value": "No",
+              "text": "No"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "page2",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "q3_how_many_end_user_laptops",
+          "title": "How many end user laptops does your organisation have at any one time?",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "1-50",
+              "text": "1-50"
+            },
+            {
+              "value": "51-200",
+              "text": "51-200"
+            },
+            {
+              "value": "201-500",
+              "text": "201-500"
+            },
+            {
+              "value": "501+",
+              "text": "501+"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "name": "q4_laptop_brands",
+          "title": "Which brands of laptop does your organisation typically buy? Tick all that apply",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "Acer",
+              "text": "Acer"
+            },
+            {
+              "value": "Apple",
+              "text": "Apple"
+            },
+            {
+              "value": "Asus",
+              "text": "Asus"
+            },
+            {
+              "value": "Dell",
+              "text": "Dell"
+            },
+            {
+              "value": "HP Inc",
+              "text": "HP Inc"
+            },
+            {
+              "value": "Lenovo",
+              "text": "Lenovo"
+            },
+            {
+              "value": "Microsoft Surface",
+              "text": "Microsoft Surface"
+            },
+            {
+              "value": "Samsung",
+              "text": "Samsung"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "page3",
+      "elements": [
+        {
+          "type": "checkbox",
+          "name": "q5_important_factors",
+          "title": "Which factors are important when considering a laptop brand for your organisation?",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "Application Compatibility",
+              "text": "Application Compatibility"
+            },
+            {
+              "value": "Cost to procure",
+              "text": "Cost to procure"
+            },
+            {
+              "value": "Employee choice or preference",
+              "text": "Employee choice or preference"
+            },
+            {
+              "value": "Total cost of ownership",
+              "text": "Total cost of ownership"
+            },
+            {
+              "value": "Robustness/Ruggedness",
+              "text": "Robustness/Ruggedness"
+            },
+            {
+              "value": "Security",
+              "text": "Security"
+            },
+            {
+              "value": "Warranty",
+              "text": "Warranty"
+            }
+          ],
+          "showOtherItem": true,
+          "otherPlaceholder": "Which other factors are important when considering a laptop brand for your organisation?",
+          "otherText": "Something else - please state"
+        },
+        {
+          "type": "radiogroup",
+          "name": "q6_typical_lifespan_laptop",
+          "title": "What is the typical lifespan for a laptop in your organisation?",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "1-2 years",
+              "text": "1-2 years"
+            },
+            {
+              "value": "3-4 years",
+              "text": "3-4 years"
+            },
+            {
+              "value": "5-7 years",
+              "text": "5-7 years"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "name": "q7_which_end_user_device_initiatives",
+          "title": "Which of the following end user device sustainability initiatives does your organisation use? (Tick all that apply)",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "Buy refurbished",
+              "text": "Buy refurbished"
+            },
+            {
+              "value": "Buy devices with energy saving features",
+              "text": "Buy devices with energy saving features"
+            },
+            {
+              "value": "Use trade-in schemes that offer to recycle old devices",
+              "text": "Use trade-in schemes that offer to recycle old devices"
+            },
+            {
+              "value": "Donate old devices to local recycling schemes",
+              "text": "Donate old devices to local recycling schemes"
+            }
+          ],
+          "showOtherItem": true,
+          "showNoneItem": true,
+          "otherPlaceholder": "Please specify",
+          "noneText": "None of the above",
+          "otherText": "Other"
+        }
+      ]
+    },
+    {
+      "name": "page4",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "q8_windows_10EOS",
+          "title": "Are you aware of Windows 10 EOS approaching in October 2025?",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "Yes",
+              "text": "Yes"
+            },
+            {
+              "value": "No",
+              "text": "No"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "q9_refresh_windows_10",
+          "title": "When are you planning to refresh all systems still running Windows 10?",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "In the next 3 months",
+              "text": "In the next 3 months"
+            },
+            {
+              "value": "In the next 6 months",
+              "text": "In the next 6 months"
+            },
+            {
+              "value": "In the next year",
+              "text": "In the next year"
+            },
+            {
+              "value": "1+ year",
+              "text": "1+ year"
+            },
+            {
+              "value": "Unsure",
+              "text": "Unsure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "page5",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "q10_timebound_special_offers",
+          "title": "Do you like to keep up to date with timebound special offers that provide extra value for money such as trade in and trade up discounts?",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "Yes",
+              "text": "Yes"
+            },
+            {
+              "value": "No",
+              "text": "No"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "name": "q11_info_windows_11_pro",
+          "title": "What type of information would you like to enable you to evaluate the full capability and cost benefits of using Windows 11 Pro within your organisation?",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "Forrester Total Cost of Ownership study",
+              "text": "Forrester Total Cost of Ownership study"
+            },
+            {
+              "value": "Case studies from similar organisations to your own",
+              "text": "Case studies from similar organisations to your own"
+            },
+            {
+              "value": "Analyst / Tech press reviews",
+              "text": "Analyst / Tech press reviews"
+            }
+          ],
+          "showOtherItem": true,
+          "otherPlaceholder": "Please state",
+          "otherText": "Other"
+        }
+      ]
+    },
+    {
+      "name": "page6",
+      "elements": [
+        {
+          "type": "text",
+          "name": "q12_first_name",
+          "title": "First Name",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "q13_last_name",
+          "title": "Last Name",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "q14_email",
+          "title": "Email",
+          "isRequired": true,
+          "inputType": "email"
+        },
+        {
+          "type": "text",
+          "name": "q15_mobile_number",
+          "title": "What is the best mobile number to reach you on?",
+          "isRequired": true
+        }
+      ]
+    }
+  ],
+  "headerView": "advanced"
+}
