@@ -3,7 +3,6 @@ import SectionTwo from "@/components/SectionTwo";
 import SectionThree from "@/components/SectionThree";
 import SectionFour from "@/components/SectionFour";
 import SectionFive from "@/components/SectionFive";
-import SectionSix from "@/components/SectionSix";
 import SectionSeven from "@/components/SectionSeven";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -19,7 +18,6 @@ export default function Home() {
       <SectionThree />
       <SectionFour />
       <SectionFive />
-      <SectionSix />
       <SectionSeven />
       <Footer />
     </>
