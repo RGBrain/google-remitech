@@ -1,5 +1,4 @@
 import React from "react";
-import BtnSurvey from "./BtnSurvey";
 import Image from "next/image";
 
 const Header = () => {
@@ -16,8 +15,6 @@ const Header = () => {
           {/* putting this div with 'hidden' around the BtnSurvey.  The above code WAS in the BtnSurvey component, but it is better outside of it.  Because the BtnSurvey component is used more than once */}
           {/* ALSO, i have moved the 'm-5 ml-10' OUT of the BtnSurvey component and into the above div, because this margin is only specifc to the button in the header, and not to every button - 
         THE PADDING REMAINS still in BtnSurvey component because that is part of the button component - same for every button */}
-
-          <BtnSurvey />
         </div>
 
         <Image src="/MSSurface_TDSYNNEX-Logos-scaled.png" width={400} height={400} alt="TD Synnex and Microsoft Surface logos" className="md:mr-18 w-65 lg:w-110" />
