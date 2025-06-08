@@ -17,9 +17,9 @@ export default function Home() {
       <SectionTwo />
       <SectionThree />
       <SectionFour />
-      <SectionFive />
+      {/* <SectionFive />
       <SectionSeven />
-      <Footer />
+      <Footer /> */}
     </>
   );
 }

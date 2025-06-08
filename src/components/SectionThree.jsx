@@ -5,7 +5,7 @@ const SectionThree = () => {
   return (
     <section id="s1" className="">
       <div className="px-0 max-w-[1350px] mx-auto">
-        <div className="mx-auto w-full bg-white pb-20">
+        <div className="mx-auto w-full bg-white">
           {/* THIS OUTER DIV JUST FOR THE IMAGE, maybe gives a bit more control on image width */}
           <Image
             alt="Google Workspace Diagram"
