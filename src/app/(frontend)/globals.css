@@ -8,6 +8,8 @@
   --off-white: #f2f2f2;
   --td-footer: #005757;
   --grey: #757477;
+  --remitech-purple: #7b68eb;
+  --remitech-turquoise: #01bbd5;
 }
 
 @theme inline {
@@ -20,6 +22,8 @@
   --color-grey: var(--grey);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-remitech-purple: var(--remitech-purple);
+  --color-remitech-turquoise: var(--remitech-turquoise);
 }
 
 @media (prefers-color-scheme: dark) {
