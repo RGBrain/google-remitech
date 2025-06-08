@@ -4,7 +4,7 @@ import BtnPDF from "@/components/BtnPDF";
 
 const Header = () => {
   return (
-    <header id="hhh" className="bg-gradient-to-tr from-remitech-purple to-remitech-turquoise to-85% w-full sticky top-0 z-40">
+    <header id="hhh" className="bg-gradient-to-tr from-remitech-purple to-remitech-turquoise to-85% w-full sticky top-0 z-40 ">
       {/* 'min-h-[84px] sm:min-h-[110px]' - i did this because the header had less height than original site before */}
       {/* 'items-center' - to center Btn and Logo vertically */}
       {/* NOW STICKY with 'sticky top-0 */}

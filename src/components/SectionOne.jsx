@@ -4,7 +4,7 @@ import Image from "next/image";
 const SectionOne = () => {
   return (
     <section id="s1" className="">
-      <div className="px-4 max-w-[1350px] mx-auto">
+      <div className="px-0 max-w-[1350px] mx-auto">
         <div className="mx-auto w-full bg-white pb-20">
           {/* THIS OUTER DIV JUST FOR THE IMAGE, maybe gives a bit more control on image width */}
           <Image
