@@ -4,22 +4,33 @@ import React from "react";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import { useEffect, useRef } from "react";
 import { useState } from "react";
-import cmsFormStructure from "./ContactFormStructure";
+// import cmsFormStructure from "./ContactFormStructure";
 const ContactForm = () => {
-  //  const [cmsForm, setCmsForm] = useState(null);
+  const [cmsForm, setCmsForm] = useState(null);
   const [error, setError] = useState(null);
   const formRef = useRef(null);
   const [success, setSuccess] = useState(false);
 
-  // 1) get the form from payload
+  //TODO 1) get the form from payload
 
-  // useEffect(() => {
-  //   setCmsForm(cmsFormStructure);
-  // }, [1]); // form id is in [ ]
+  const formId = 1;
 
-  //* 2) render the form based on field types
+  useEffect(() => {
+    // Fetch the form configuration
+    fetch(`/api/forms/${formId}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setCmsForm(data);
+        // console.log("cmsForm", data);
+      })
+      .catch((err) => setError("Error loading form"));
+  }, [formId]);
 
-  // handle form submission
+  // console.log(cmsForm);
+  // return;
+
+  //TODO handle form submission
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -34,7 +45,7 @@ const ContactForm = () => {
     const response = await fetch("/api/form-submissions", {
       method: "POST",
       body: JSON.stringify({
-        form: 1, // form id
+        form: formId,
         submissionData: dataToSend,
       }),
       headers: {
@@ -53,11 +64,9 @@ const ContactForm = () => {
     formRef.current?.reset();
   };
 
-  //  if (!cmsForm) return <div>Loading...</div>;
-
-  //  setCmsForm(cmsFormStructure);
-
-  const cmsForm = cmsFormStructure;
+  //! What is this...
+  //! IMPORTANT LEAVE THIS IN, IF PULLED CMSFORM STRUCTURE FROM PAYLOAD FORMS COLLECTION
+  if (!cmsForm) return <div>Loading...</div>;
 
   if (success && cmsForm.confirmationMessage) {
     setTimeout(() => {
@@ -70,41 +79,33 @@ const ContactForm = () => {
     );
   }
 
-  // console.log("cmsForm object", cmsForm);
-
-  //  console.log(cmsForm);
-
-  //   return;
-
-  //! JUST HARD CODING THE FORM STRUCTURE IN INSTEAD OF PULLING FROM DB
-
-  // cmsForm.fields[0].blockType;
-
-  // cmsForm = {}
-  // cmsForm.fields = []
-  // cmsForm.confirmationMessage = ''  // string????
-
-  // log cmsform and copy console.log
-
-  // cmsForm =
+  //TODO render the form based on field types
 
   return (
     <>
-      <div className="p-8 px-0 pt-2 text-gray-600 text-sm">
+      <div className="p-8 px-0 py-2 pt-2 text-gray-600 text-sm">
         <form onSubmit={handleSubmit} ref={formRef}>
-          <div className="flex flex-col justify-between items-stretch space-y-3">
-            <input type={cmsForm.fields[0].blockType} name={cmsForm.fields[0].name} id={cmsForm.fields[0].name} className="h-6 p-5 bg-white outline-1 outline-gray-300 rounded-md" placeholder={cmsForm.fields[0].name} required />
-            <div className="flex flex-col md:flex-row justify-between space-y-3 md:space-x-4 md:space-y-0">
-              <input type={cmsForm.fields[1].blockType} name={cmsForm.fields[1].name} id={cmsForm.fields[1].name} size="10" className="h-6 p-5 bg-white outline-1 outline-gray-300 rounded-md grow-1" placeholder={cmsForm.fields[1].name} required />
-
-              <input type={cmsForm.fields[2].blockType} name={cmsForm.fields[2].name} id={cmsForm.fields[2].name} size="10" className="h-6 p-5 bg-white outline-1 outline-gray-300 rounded-md grow-1" placeholder={cmsForm.fields[2].name} required />
-            </div>
-            <input type={cmsForm.fields[3].blockType} name={cmsForm.fields[3].name} id={cmsForm.fields[3].name} className="h-6 p-5 bg-white outline-1 outline-gray-300 rounded-md" placeholder={cmsForm.fields[3].name} required />
-            <button className="p-2 px-5 bg-btn hover:bg-btn-hover transition text-white font-bold text-xl rounded-md cursor-pointer" type="submit">
-              Send
-            </button>
-            ;
+          {/* <label htmlFor={field.name}>{field.label}</label> */}
+          <div className="flex flex-col items-start space-y-2">
+            {cmsForm.fields.map((field) => (
+              <div key={field.id}>
+                {field.blockType !== "checkbox" ? (
+                  <input type={field.blockType} name={field.name} id={field.name} className="h-6 p-5 py-4 bg-white outline-1 outline-gray-300 rounded-md" placeholder={field.label} required={field.required} />
+                ) : (
+                  <div className="mt-2 flex items-start">
+                    <input type={field.blockType} name={field.name} id={field.name} className="p-5 py-4 bg-white rounded-md" placeholder={field.label} required={field.required} />
+                    <label className="ml-3 pl-0 -mt-[2px] inline-block text-xs">{field.label}</label>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
+
+          {/* note: it appears, that can to required={boolean} in React, but maybe not html */}
+
+          <button className="p-1 px-5 mt-3 bg-gradient-to-tr from-remitech-purple to-remitech-turquoise transition text-white hover:to-remitech-purple font-bold text-base rounded-md cursor-pointer" type="submit">
+            Send
+          </button>
         </form>
       </div>
     </>

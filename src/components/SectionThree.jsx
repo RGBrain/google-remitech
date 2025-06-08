@@ -6,7 +6,9 @@ const SectionThree = () => {
   return (
     <section id="s1" className="">
       <FadeTextWrapper>
-        <div className="px-0 max-w-[1350px] mx-auto">
+        <div className="px-0 mx-auto">
+          {/* was max-w-[1350px] */}
+
           <div className="mx-auto w-full bg-white">
             {/* THIS OUTER DIV JUST FOR THE IMAGE, maybe gives a bit more control on image width */}
             <Image
