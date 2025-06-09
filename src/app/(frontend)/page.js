@@ -7,11 +7,14 @@ import SectionSeven from "@/components/SectionSeven";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FadeTextWrapper from "@/components/FadeTextWrapper";
+import ClientOnlyWrapper from "@/components/ClientOnlyWrapper";
 
 export default function Home() {
   return (
     <>
-      <Header />
+      <ClientOnlyWrapper>
+        <Header />
+      </ClientOnlyWrapper>
       {/* MOVE HEADER (and FOOTER) OUT OF LAYOUT AND INTO HERE, JUST SO THAT IT ALSO FADES INTO THE VIEW ON INITIAL PAGE LOAD */}
       <SectionOne />
       <SectionTwo />
