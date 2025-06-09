@@ -27,19 +27,16 @@ const SectionTwo = () => {
         <ClientOnlyWrapper>
           <SlideElementWrapper slideFrom="right">
             <div className="bg-[#2a6af9] px-5 py-6 text-sm text-white font-medium sm:w-[500px] rounded-lg lg:relative left-86 bottom-43">
+              <h4 className="pb-4 font-bold text-lg">Do your best work with Gemini for Workspace</h4>
+
               <p className="pb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis
+                Gemini for Workspace helps you work smarter, not harder, increasing productivity and saving time so you can focus on higher-impact work. This guide explores different ways to quickly jump in and gain mastery of the basics to help you
+                accomplish your day-to-day tasks.
               </p>
-              <p className="pb-4">
-                aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                minim
+
+              <p className="pb-1">
+                Explore foundational skills for writing effective prompts organized by role and use case. While the possibilities are virtually endless, there are consistent best practices that you can put to use today — dive in!
               </p>
-              <p className="pb-4">
-                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                minim
-              </p>
-              <p className="pb-0">veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
             </div>
           </SlideElementWrapper>
         </ClientOnlyWrapper>
