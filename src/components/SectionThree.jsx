@@ -6,20 +6,15 @@ const SectionThree = () => {
   return (
     <section id="s1" className="">
       <FadeTextWrapper>
-        <div className="px-0 mx-auto">
-          {/* was max-w-[1350px] */}
-
-          <div className="mx-auto w-full bg-white">
-            {/* THIS OUTER DIV JUST FOR THE IMAGE, maybe gives a bit more control on image width */}
-            <Image
-              alt="Google Workspace Diagram"
-              className="mx-auto"
-              src="/img-section-three.png"
-              width={0}
-              height={0}
-              sizes="100vw"
-              style={{ width: "100%", height: "auto" }} // optional
-            />
+        <div className="px-3 py-20 sm:py-28 lg:py-36 mx-auto max-w-[650px]">
+          <div className="text-5xl sm:text-6xl lg:text-7xl font-bold flex justify-center">
+            <h3 className="leading-14 sm:leading-18 lg:leading-22">
+              <span className="whitespace-nowrap">Embrace the</span>
+              <br />
+              <span className="whitespace-nowrap"> future of work</span>
+              <br />
+              <span className="bg-gradient-to-r from-[#4785f5] from-30% to-[#d36173] text-transparent bg-clip-text whitespace-nowrap">with Google AI</span>
+            </h3>
           </div>
         </div>
       </FadeTextWrapper>
