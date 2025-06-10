@@ -1,16 +1,17 @@
 "use client";
 
 import React from "react";
-import RemitechLogo from "../../public/remitech-logo.svg";
+import RemitechLogoColor from "../../public/remitech-logo-color.svg";
+import RemitechLogoWhite from "../../public/remitech-logo-white.svg";
 import BtnPDF from "@/components/BtnPDF";
-import Image from "next/image";
+// import Image from "next/image";
 import { useScrollPosition } from "@thibault.sh/hooks/useScrollPosition";
 
 const Header = () => {
   const { y } = useScrollPosition();
 
   return (
-    <header id="hhh" className={`w-full sticky top-0 z-40 transition ease-in-out duration-1000 bg-gradient-to-tr to-85% ${y > 0 ? " from-remitech-purple to-remitech-turquoise" : "from-white to-white"}`}>
+    <header id="hhh" className={`w-full sticky top-0 z-40 transition ease-in-out duration-1000 bg-gradient-to-tr to-85% ${y > 0 ? " from-remitech-purple to-remitech-turquoise shadow-lg" : "from-white to-white"}`}>
       {/* 'min-h-[84px] sm:min-h-[110px]' - i did this because the header had less height than original site before */}
       {/* 'items-center' - to center Btn and Logo vertically */}
       {/* NOW STICKY with 'sticky top-0 */}
@@ -23,7 +24,9 @@ const Header = () => {
           <BtnPDF />
         </div>
 
-        {y > 0 ? <RemitechLogo className="fill-foreground w-56 md:mr-18" /> : <Image src="/remitech-logo-color.png" width={222} height={200} alt="Remitech Logo" className="md:mr-18" />}
+        {y > 0 ? <RemitechLogoWhite className="fill-white w-56 md:mr-18" /> : <RemitechLogoColor className="w-56 md:mr-18" />}
+
+        {/* <Image src="/remitech-logo-color.png" width={222} height={200} alt="Remitech Logo" className="md:mr-18" /> */}
 
         {/* <Image src="/MSSurface_TDSYNNEX-Logos-scaled.png" width={400} height={400} alt="TD Synnex and Microsoft Surface logos" className="md:mr-18 w-65 lg:w-110" /> */}
       </div>
