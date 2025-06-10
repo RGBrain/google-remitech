@@ -80,30 +80,50 @@ const ContactForm = () => {
   }
 
   //TODO render the form based on field types
-
+  console.log(cmsForm.fields);
   return (
     <>
-      <div className="p-8 px-0 py-2 pt-2 text-gray-600 text-sm">
+      <div className="p-8 px-0 pl-12 py-2 pt-2 text-gray-600 text-sm">
+        <h3 id="FormRegisterInterest" className="text-4xl mb-8 mt-8">
+          Register Interest
+        </h3>
         <form onSubmit={handleSubmit} ref={formRef}>
           {/* <label htmlFor={field.name}>{field.label}</label> */}
           <div className="flex flex-col items-start space-y-2">
-            {cmsForm.fields.map((field) => (
-              <div key={field.id}>
-                {field.blockType !== "checkbox" ? (
-                  <input type={field.blockType} name={field.name} id={field.name} className="h-6 p-5 py-4 bg-white outline-1 outline-gray-300 rounded-md" placeholder={field.label} required={field.required} />
-                ) : (
-                  <div className="mt-2 flex items-start">
+            {cmsForm.fields.map((field, i) => {
+              if (field.blockType === "checkbox") {
+                return (
+                  <div key={i} className="mt-2 flex items-start">
                     <input type={field.blockType} name={field.name} id={field.name} className="p-5 py-4 bg-white rounded-md" placeholder={field.label} required={field.required} />
                     <label className="ml-3 pl-0 -mt-[2px] inline-block text-xs">{field.label}</label>
                   </div>
-                )}
-              </div>
-            ))}
+                );
+              } else if (field.blockType === "select") {
+                return (
+                  <select key={i} name={field.name} id={field.name} defaultValue="" className="cursor-pointer bg-[#2a6af9] py-2 px-4 text-white rounded-md mb-6 hover:bg-remitech-purple">
+                    {/* <option value="">Choose Event</option> */}
+                    <option hidden disabled value="">
+                      select Event
+                    </option>
+                    {field.options.map((eventObj, i) => (
+                      <option key={i} value={eventObj.value}>
+                        {eventObj.label}
+                      </option>
+                    ))}
+                  </select>
+                );
+              } else {
+                return <input key={i} type={field.blockType} name={field.name} id={field.name} className="h-6 p-5 py-4 bg-white outline-1 outline-gray-300 rounded-md" placeholder={field.label} required={field.required} />;
+              }
+            })}
           </div>
 
           {/* note: it appears, that can to required={boolean} in React, but maybe not html */}
 
-          <button className="p-1 px-5 mt-3 bg-gradient-to-tr from-remitech-purple to-remitech-turquoise transition text-white hover:to-remitech-purple font-bold text-base rounded-md cursor-pointer" type="submit">
+          <button
+            className="p-1 px-5 mt-3 bg-gradient-to-tr from-remitech-purple to-remitech-turquoise transition text-white hover:to-remitech-purple font-bold text-base rounded-md cursor-pointer hover:scale-101 transform duration-200 ease-in"
+            type="submit"
+          >
             Send
           </button>
         </form>

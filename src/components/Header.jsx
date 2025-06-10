@@ -11,7 +11,7 @@ const Header = () => {
   const { y } = useScrollPosition();
 
   return (
-    <header id="hhh" className={`w-full sticky top-0 z-40 transition ease-in-out duration-1000 bg-gradient-to-tr to-85% ${y > 0 ? " from-remitech-purple to-remitech-turquoise shadow-lg" : "from-white to-white"}`}>
+    <header id="hhh" className={`w-full sticky top-0 z-50 transition ease-in-out duration-750 bg-gradient-to-tr to-85% ${y > 0 ? " from-remitech-purple to-remitech-turquoise shadow-lg" : "from-white to-white"}`}>
       {/* 'min-h-[84px] sm:min-h-[110px]' - i did this because the header had less height than original site before */}
       {/* 'items-center' - to center Btn and Logo vertically */}
       {/* NOW STICKY with 'sticky top-0 */}

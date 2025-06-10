@@ -1,0 +1,12 @@
+import React from "react";
+
+const EventHeading = ({ eventTitle, eventSubTitle }) => {
+  return (
+    <div className="bg-[#2a6af9] px-5 py-6 text-sm text-white font-medium lg:rounded-lg rounded-tl-lg rounded-tr-lg lg:w-[400px] lg:pb-102">
+      <h3 className="text-5xl">{eventTitle}</h3>
+      <h4 className="text-3xl ml-11">{eventSubTitle}</h4>
+    </div>
+  );
+};
+
+export default EventHeading;

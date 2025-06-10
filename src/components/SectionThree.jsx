@@ -4,9 +4,9 @@ import FadeTextWrapper from "@/components/FadeTextWrapper";
 
 const SectionThree = () => {
   return (
-    <section id="s1" className="">
+    <section id="s3" className="">
       <FadeTextWrapper>
-        <div className="px-3 py-20 sm:py-28 lg:py-36 mx-auto max-w-[650px]">
+        <div className="px-3 py-26 sm:py-28 lg:py-36 mx-auto max-w-[650px]">
           <div className="text-5xl sm:text-6xl lg:text-7xl font-bold flex justify-center">
             <h3 className="leading-14 sm:leading-18 lg:leading-22">
               <span className="whitespace-nowrap">Embrace the</span>

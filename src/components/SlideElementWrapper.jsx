@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 // import { motion, useScroll, useTransform } from "framer-motion";
-export default function SlideTextWrapper({ children, twClasses = "", slideFrom }) {
+export default function SlideTextWrapper({ children, twClasses = "", slideFrom, duration = "1.1" }) {
   const isLg = useMediaQuery({ query: "(min-width: 1024px)" });
 
   // animate={isLarge ? { opacity: 1, y: 0 } : {}}
@@ -28,11 +28,11 @@ export default function SlideTextWrapper({ children, twClasses = "", slideFrom }
   if (isLg) {
     switch (slideFrom) {
       case "right":
-        x = 550;
+        x = 470;
         y = 0;
         break;
       case "left":
-        x = -600;
+        x = -470;
         y = 0;
         break;
       case "top":
@@ -47,6 +47,10 @@ export default function SlideTextWrapper({ children, twClasses = "", slideFrom }
         x = 450;
         y = 250;
         break;
+      case "bottomLeft":
+        x = -450;
+        y = 250;
+        break;
 
       default:
         x = 0;
@@ -58,7 +62,7 @@ export default function SlideTextWrapper({ children, twClasses = "", slideFrom }
   return (
     // <motion.div variants={fadeUpVariant} initial="initial" animate="animate">
 
-    <motion.div initial={{ opacity: 0, y, x }} whileInView={{ opacity: 1, y: 0, x: 0 }} transition={{ duration: 1.1, ease: "easeOut" }} viewport={{ once: true }} className={twClasses}>
+    <motion.div initial={{ opacity: 0, y, x }} whileInView={{ opacity: 1, y: 0, x: 0 }} transition={{ duration, ease: "easeOut" }} viewport={{ once: true }} className={twClasses}>
       {children}
     </motion.div>
   );

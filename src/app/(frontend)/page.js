@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FadeTextWrapper from "@/components/FadeTextWrapper";
 import ClientOnlyWrapper from "@/components/ClientOnlyWrapper";
+import SectionForthcomingEvents from "@/components/SectionFour";
 
 export default function Home() {
   return (
@@ -20,9 +21,8 @@ export default function Home() {
       <SectionTwo />
       <SectionThree />
       <SectionFour />
-      {/* <SectionFive />
-      <SectionSeven />
-      <Footer /> */}
+      <SectionFive />
+      {/* <Footer /> */}
     </>
   );
 }
