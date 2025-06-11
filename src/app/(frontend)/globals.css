@@ -58,3 +58,7 @@ a:hover {
 a:active {
   color: var(--color-remitech-turquoise);
 }
+
+html {
+  scroll-padding-top: 150px;
+}
