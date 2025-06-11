@@ -17,7 +17,7 @@ eventData.eventText.push(`Event sponsored by Kandji`);
 eventData.imageSrc = "/event2-image.png";
 eventData.imageAlt = "urban building rooftops";
 eventData.eventTitle = "Rooftop BBQ";
-eventData.eventSubTitle = "An Evening with Arek Dreyer";
+eventData.eventSubTitle = `An Evening with <span style="white-space: nowrap;">Arek Dreyer</span>`;
 
 const Event2 = () => {
   return <EventTemplate eventData={eventData} textPos="left" />;

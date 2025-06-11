@@ -25,7 +25,7 @@ const SectionTwo = () => {
           {/* </div> */}
         </FadeTextWrapper>
         <ClientOnlyWrapper>
-          <SlideElementWrapper slideFrom="right">
+          <SlideElementWrapper slideFrom="right" duration="0.7">
             <div className="bg-[#2a6af9] px-5 py-6 text-sm text-white font-medium sm:w-[500px] rounded-lg lg:relative left-86 bottom-43">
               <h4 className="pb-4 font-bold text-lg">Do your best work with Gemini for Workspace</h4>
 

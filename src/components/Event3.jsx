@@ -9,10 +9,10 @@ const eventData = {};
 
 eventData.eventNum = 3;
 eventData.eventText = [];
-eventData.eventText.push(`Our dinners are a space for IT professionals across the Fintech sector — including Insuretech, Payment Platforms, Wealthtech, Lending, and more.`);
-eventData.eventText.push(
-  `The purpose? To connect, share experiences, and have open conversations about the challenges and successes of operating in a highly regulated industry. Each dinner is thoughtfully curated around a specific theme, designed to spark meaningful discussion and foster genuine peer-to-peer connections.`
-);
+eventData.eventText.push(`Join Remitech with fellow CISOs and security leaders for an evening of networking, great food, and world-class entertainment—right from the luxury of our VIP suite at The O2 Arena, in partnership with Cloudflare.`);
+eventData.eventText.push(`🎤 Lady Gaga – 30th September 2025`);
+eventData.eventText.push(`🎼 Hans Zimmer – 1st December 2025`);
+eventData.eventText.push(`Spaces are extremely limited—just 14 spots per event—and will be allocated on a first come, first served basis. Please register interest below.`);
 
 eventData.imageSrc = "/event3-image.png";
 eventData.imageAlt = "O2 Arena";
