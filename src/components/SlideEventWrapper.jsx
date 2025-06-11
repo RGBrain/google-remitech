@@ -1,10 +1,12 @@
 "use client";
 import { useEffect } from "react";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform, useInView } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 // import { motion, useScroll, useTransform } from "framer-motion";
-export default function SlideElementWrapper({ children, twClasses = "", slideFrom, duration = "1.1" }) {
+export default function SlideEventWrapper({ children, twClasses = "", eventRef, slideFrom, duration = "1.1", delay = "0.0" }) {
   const isLg = useMediaQuery({ query: "(min-width: 1024px)" });
+
+  const eventInView = useInView(eventRef, { once: true }); // boolean - is the event in view ?
 
   // animate={isLarge ? { opacity: 1, y: 0 } : {}}
 
@@ -28,20 +30,20 @@ export default function SlideElementWrapper({ children, twClasses = "", slideFro
   if (isLg) {
     switch (slideFrom) {
       case "right":
-        x = 470;
+        x = 450;
         y = 0;
         break;
       case "left":
-        x = -470;
+        x = -450;
         y = 0;
         break;
       case "top":
         x = 0;
-        y = -600;
+        y = -450;
         break;
       case "bottom":
         x = 0;
-        y = 350;
+        y = 450;
         break;
       case "bottomRight":
         x = 450;
@@ -59,11 +61,17 @@ export default function SlideElementWrapper({ children, twClasses = "", slideFro
     }
   }
 
-  return (
-    // <motion.div variants={fadeUpVariant} initial="initial" animate="animate">
+  // <motion.div variants={fadeUpVariant} initial="initial" animate="animate">
 
-    <motion.div initial={{ opacity: 0, y, x }} whileInView={{ opacity: 1, y: 0, x: 0 }} transition={{ duration, ease: "easeOut" }} viewport={{ once: true }} className={twClasses}>
-      {children}
-    </motion.div>
-  );
+  // whileInView={{ opacity: 1, y: 0, x: 0 }}
+
+  if (eventInView) {
+    return (
+      <motion.div initial={{ opacity: 0, y, x }} animate={{ opacity: 1, y: 0, x: 0 }} transition={{ delay, duration, ease: "easeOut" }} viewport={{ once: true }} className={twClasses}>
+        {children}
+      </motion.div>
+    );
+  } else {
+    return <div></div>;
+  }
 }
