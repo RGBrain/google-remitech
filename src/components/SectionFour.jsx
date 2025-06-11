@@ -2,6 +2,7 @@ import React from "react";
 import Event1 from "@/components/Event1";
 import Event2 from "@/components/Event2";
 import Event3 from "@/components/Event3";
+import ContactForm from "./ContactForm";
 
 const SectionFour = () => {
   return (
@@ -14,6 +15,9 @@ const SectionFour = () => {
         <Event1 />
         <Event2 />
         <Event3 />
+        <div className="mx-auto flex justify-center">
+          <ContactForm />
+        </div>
       </div>
     </section>
   );

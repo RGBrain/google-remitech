@@ -21,7 +21,8 @@ export default function Home() {
       <SectionTwo />
       <SectionThree />
       <SectionFour />
-      <SectionFive />
+      {/* NOW THE CONTACT FORM IS INCLUDED IN SectionFive so it has the same Remitech BG Color */}
+      {/* <SectionFive /> */}
       {/* <Footer /> */}
     </>
   );

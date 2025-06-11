@@ -16,8 +16,8 @@ eventData.eventText.push(`Spaces are extremely limited—just 14 spots per event
 
 eventData.imageSrc = "/event3-image.png";
 eventData.imageAlt = "O2 Arena";
-eventData.eventTitle = "Fintech";
-eventData.eventSubTitle = "Dinner Club";
+eventData.eventTitle = "CISO @ The O2 Club";
+eventData.eventSubTitle = "Lady Gaga | Hans Zimmer";
 
 const Event3 = () => {
   return <EventTemplate eventData={eventData} textPos="right" lastEvent={true} />;

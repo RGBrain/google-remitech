@@ -7,6 +7,7 @@
   --grey: #757477;
   --remitech-purple: #7b68eb;
   --remitech-turquoise: #01bbd5;
+  --btn: #2a6af9;
 }
 
 @theme inline {
@@ -44,4 +45,16 @@ body {
 }
 
 body {
+}
+
+a {
+  color: var(--btn);
+}
+
+a:hover {
+  color: var(--remitech-purple);
+}
+
+a:active {
+  color: var(--color-remitech-turquoise);
 }

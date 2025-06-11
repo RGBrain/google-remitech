@@ -4,7 +4,7 @@ import Image from "next/image";
 const SectionOne = () => {
   return (
     <section id="s1" className="">
-      <div className="px-0 mx-auto">
+      <div className="px-0 mx-auto max-w-[1350px]">
         {/* was max-w-[1350px] */}
 
         <div className="mx-auto w-full bg-white pb-20 xl:pb-8 2xl:pb-0 xl:-mt-12 2xl:-mt-16">
