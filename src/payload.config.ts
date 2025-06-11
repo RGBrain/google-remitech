@@ -11,6 +11,9 @@ import { formBuilderPlugin } from "@payloadcms/plugin-form-builder";
 import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 
+import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
+import nodemailer from "nodemailer";
+
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
@@ -47,4 +50,19 @@ export default buildConfig({
       // see below for a list of available options
     }),
   ],
+  email: nodemailerAdapter({
+    defaultFromAddress: "emails.bwd@zohomail.com",
+    defaultFromName: "BWD",
+    // Nodemailer transportOptions
+    // Any Nodemailer transport
+    transport: await nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: 465, //587
+      secure: true,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    }),
+  }),
 });
