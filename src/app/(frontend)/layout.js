@@ -1,4 +1,5 @@
 import { Open_Sans, Poppins } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const openSans = Open_Sans({
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
           <p>Screen</p>
         </div> */}
         {children}
+        <Analytics />
       </body>
     </html>
   );
