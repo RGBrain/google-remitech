@@ -9,7 +9,7 @@ const eventData = {};
 
 eventData.eventNum = 3;
 eventData.eventText = [];
-eventData.eventText.push(`Join Remitech with fellow CISOs and security leaders for an evening of networking, great food, and world-class entertainment—right from the luxury of our VIP suite at The O2 Arena, in partnership with Cloudflare.`);
+eventData.eventText.push(`Join Remitech with fellow CISOs and security leaders for an evening of networking, great food, and world-class entertainment—right from the luxury of our VIP suite at The O2 Arena.`);
 eventData.eventText.push(`🎤 Lady Gaga – 30th September 2025`);
 eventData.eventText.push(`🎼 Hans Zimmer – 1st December 2025`);
 eventData.eventText.push(`Spaces are extremely limited—just 14 spots per event—and will be allocated on a first come, first served basis. Please register interest below.`);

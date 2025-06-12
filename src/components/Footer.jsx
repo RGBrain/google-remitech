@@ -9,8 +9,8 @@ const Footer = () => {
         <div className="flex justify-between items-center min-h-[80px] md:min-h-[90px] max-w-[1420px] mx-auto px-5 pl-6 sm:pl-14 sm:px-14">
           <div>
             <ClickIcon className="w-8 inline-block mr-3 -mt-[6px]" />
-            <a href="https://inbound.systems/privacy/" target="_blank">
-              <span className="text-[10px] sm:text-xs lg:text-sm">View the LeadaMarket privacy statement</span>
+            <a href="https://remitech.com/privacy/" target="_blank">
+              <span className="text-[10px] sm:text-xs lg:text-sm">View the Remitech privacy policy</span>
             </a>
           </div>
 

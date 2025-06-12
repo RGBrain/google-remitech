@@ -108,7 +108,7 @@ const ContactForm = () => {
                   <select key={i} name={field.name} id={field.name} defaultValue="" required={field.required} className="cursor-pointer bg-btn py-2 px-4 text-white rounded-md mb-6 hover:bg-remitech-purple">
                     {/* <option value="">Choose Event</option> */}
                     <option hidden disabled value="">
-                      select Event
+                      Select Event
                     </option>
                     {field.options.map((eventObj, i) => (
                       <option key={i} value={eventObj.value}>

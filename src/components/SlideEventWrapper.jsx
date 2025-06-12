@@ -6,7 +6,7 @@ import { useMediaQuery } from "react-responsive";
 export default function SlideEventWrapper({ children, twClasses = "", eventRef, slideFrom, duration = "1.1", delay = "0.0" }) {
   const isLg = useMediaQuery({ query: "(min-width: 1024px)" });
 
-  const eventInView = useInView(eventRef, { once: true, amount: 0.5 }); // boolean - is the event in view ?
+  const eventInView = useInView(eventRef, { once: true }); // boolean - is the event in view ?
 
   // animate={isLarge ? { opacity: 1, y: 0 } : {}}
 
