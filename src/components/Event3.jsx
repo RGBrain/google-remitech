@@ -16,7 +16,7 @@ eventData.eventText.push(`Spaces are extremely limited—just 14 spots per event
 
 eventData.imageSrc = "/event3-image.png";
 eventData.imageAlt = "O2 Arena";
-eventData.eventTitle = `CISO @ <span style="white-space: nowrap;">The O2 Club</span>`;
+eventData.eventTitle = `CISO <span style="position:relative; top:-6px; line-height: 1.15;">@</span> <span style="white-space: nowrap;">The O2 Club</span>`;
 eventData.eventSubTitle = "Lady Gaga | Hans Zimmer";
 
 const Event3 = () => {

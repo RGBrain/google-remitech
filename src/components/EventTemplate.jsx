@@ -17,7 +17,7 @@ const EventTemplate = ({ eventData, textPos, lastEvent = false }) => {
   const thisEvent = useRef(null);
 
   return (
-    <article ref={thisEvent} className={`flex flex-col ${textPos === "left" ? `lg:mr-20` : `lg:ml-10`} my-18 lg:my-28 items-start space-y-5 lg:h-[765px] ${lastEvent === true ? `overflow-hidden pt-20 lg:pt-10 -mt-20` : ``}`}>
+    <article ref={thisEvent} className={`flex flex-col ${textPos === "left" ? `lg:mr-20` : `lg:ml-10`} my-18 lg:my-28 items-start space-y-5 lg:h-[765px] ${lastEvent === true ? `overflow-hidden pt-20 lg:pt-10 -mt-20 lg:-mt-6` : ``}`}>
       <div className={`lg:relative lg:bottom-155 lg:order-2 self-stretch z-30 mt-24 lg:mt-0 lg:self-start ${textPos === "left" ? `lg:left-10` : `lg:left-106`}`}>
         <ClientOnlyWrapper>
           <SlideEventWrapper eventRef={thisEvent} slideFrom={headingSlideFrom} duration="0.7" delay="0.0">
