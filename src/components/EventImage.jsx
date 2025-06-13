@@ -10,7 +10,12 @@ const EventImage = ({ imageSrc, imageAlt }) => {
       width={0}
       height={0}
       sizes="100vw"
-      style={{ width: "100%", height: "575px", objectFit: "cover", objectPosition: "top" }} // optional
+      style={{
+        width: "100%",
+        height: "675px",
+        objectFit: "cover",
+        objectPosition: "top",
+      }}
     />
   );
 };
