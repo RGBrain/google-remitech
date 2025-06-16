@@ -54,7 +54,7 @@ const EventTemplate = ({ eventData, textPos }) => {
 
       {/* White Box */}
       <div
-        className={`lg:relative lg:bottom-300 lg:order-3 z-40 -mt-3 lg:-mt-0 ${textPos === "left" ? `lg:left-23` : `lg:left-119`}`}
+        className={`lg:relative lg:bottom-295 lg:order-3 z-40 -mt-3 lg:-mt-0 ${textPos === "left" ? `lg:left-23` : `lg:left-119`}`}
       >
         <ClientOnlyWrapper>
           <SlideEventWrapper
