@@ -10,10 +10,10 @@ const eventData = {};
 eventData.eventNum = 2;
 eventData.eventText = [];
 eventData.eventText.push(
-  `Join Us for an evening of great food, drinks, conversation, and informal Q&A on Thursday, 26th June from 6:00pm at a Kings Cross rooftop.`
+  `Join Us for an evening of great food, drinks, conversation, and informal Q&A on Thursday, 26th June from 6:00pm at a Kings Cross rooftop.`,
 );
 eventData.eventText.push(
-  `Spaces are limited, so please register below to secure your place.`
+  `Spaces are limited, so please register below to secure your place.`,
 );
 
 eventData.imageSrc = "/event2-image.jpg";

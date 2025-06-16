@@ -6,9 +6,12 @@ import ContactForm from "./ContactForm";
 
 const SectionFour = () => {
   return (
-    <section id="s4" className="bg-gradient-to-tr from-remitech-purple to-remitech-turquoise to-85% min-h-120 lg:pt-12 pb-12">
-      <div className="px-4 py-8 max-w-[535px] lg:max-w-[1000px] mx-auto">
-        <h2 className="text-white text-4xl lg:text-5xl font-normal lg:mb-36 -mb-20 leading-12 lg:leading-15 mt-6 lg:ml-10">
+    <section
+      id="s4"
+      className="from-remitech-purple to-remitech-turquoise min-h-120 bg-gradient-to-tr to-85% pb-12 lg:pt-12"
+    >
+      <div className="mx-auto max-w-[535px] px-4 py-8 lg:max-w-[1000px]">
+        <h2 className="mt-6 -mb-20 text-4xl leading-12 font-normal text-white lg:mb-36 lg:ml-10 lg:text-5xl lg:leading-15">
           Forthcoming <br />
           Events
         </h2>

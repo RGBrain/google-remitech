@@ -20,7 +20,12 @@ export async function sendMail({ email, sendTo, subject, text, html }) {
   try {
     const isVerified = await transporter.verify();
   } catch (error) {
-    console.error("Something Went Wrong", SMTP_SERVER_USERNAME, SMTP_SERVER_PASSWORD, error);
+    console.error(
+      "Something Went Wrong",
+      SMTP_SERVER_USERNAME,
+      SMTP_SERVER_PASSWORD,
+      error,
+    );
     return;
   }
   const info = await transporter.sendMail({

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { useEffect } from "react";
 
 function scrollToElement(id) {
   const element = document.getElementById(id);
@@ -12,7 +11,10 @@ function scrollToElement(id) {
 
 const RegisterInterestBtn = () => {
   return (
-    <button onClick={() => scrollToElement("FormRegisterInterest")} className="py-4 px-14 mt-3 text-white transition font-normal text-base rounded-md cursor-pointer bg-btn hover:bg-[#5888f1] hover:scale-102 transform duration-200 ease-in">
+    <button
+      onClick={() => scrollToElement("FormRegisterInterest")}
+      className="bg-btn mt-3 transform cursor-pointer rounded-md px-14 py-4 text-base font-normal text-white transition duration-200 ease-in hover:scale-102 hover:bg-[#5888f1]"
+    >
       Register Interest
     </button>
   );

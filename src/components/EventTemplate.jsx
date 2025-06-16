@@ -19,11 +19,11 @@ const EventTemplate = ({ eventData, textPos }) => {
   return (
     <article
       ref={thisEvent}
-      className={`flex flex-col my-28 items-start lg:h-[965px] lg:w-[1000px] `}
+      className={`my-28 flex flex-col items-start lg:h-[965px] lg:w-[1000px]`}
     >
       {/* Blue Box */}
       <div
-        className={`lg:relative lg:bottom-180 lg:order-2 self-stretch z-30 mt-24 lg:mt-0 lg:self-start ${textPos === "left" ? `lg:left-10` : `lg:left-106`}`}
+        className={`z-30 mt-24 self-stretch lg:relative lg:bottom-180 lg:order-2 lg:mt-0 lg:self-start ${textPos === "left" ? `lg:left-10` : `lg:left-106`}`}
       >
         <ClientOnlyWrapper>
           <SlideEventWrapper
@@ -42,7 +42,7 @@ const EventTemplate = ({ eventData, textPos }) => {
 
       {/* Image */}
       <div
-        className={`w-full h-150 z-10 self-center -mt-30 lg:-mt-0 lg:max-w-[540px] lg:h-[785px] ${textPos === "left" ? `lg:self-end lg:mx-16` : `lg:self-start`} `}
+        className={`z-10 -mt-30 h-150 w-full self-center lg:-mt-0 lg:h-[785px] lg:max-w-[540px] ${textPos === "left" ? `lg:mx-16 lg:self-end` : `lg:self-start`} `}
       >
         <FadeTextWrapper>
           <EventImage
@@ -54,7 +54,7 @@ const EventTemplate = ({ eventData, textPos }) => {
 
       {/* White Box */}
       <div
-        className={`lg:relative lg:bottom-295 lg:order-3 z-40 -mt-3 lg:-mt-0 ${textPos === "left" ? `lg:left-23` : `lg:left-119`}`}
+        className={`z-40 -mt-3 lg:relative lg:bottom-295 lg:order-3 lg:-mt-0 ${textPos === "left" ? `lg:left-23` : `lg:left-119`}`}
       >
         <ClientOnlyWrapper>
           <SlideEventWrapper

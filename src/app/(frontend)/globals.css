@@ -24,15 +24,15 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    /* COMMENTING OUT, SO THAT SYSTEM DARK MODE DOES NOT CHANGE WEBSITE */
     /* --background: #0a0a0a;
     --foreground: #ededed; */
-    /* COMMENTING OUT, SO THAT SYSTEM DARK MODE DOES NOT CHANGE WEBSITE, AS I NOTE THAT SYSTEM THEME HAS NO EFFECT ON ORIGINAL WEBSITE */
   }
 }
 
 html {
   scroll-padding-top: 150px;
-  /* this is so that when click button "Register Interest", the header does not hide the form */
+  /* This is so that when click button "Register Interest", the header does not hide the form */
 }
 
 body {

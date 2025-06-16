@@ -12,37 +12,33 @@ const ContactForm = () => {
   const formRef = useRef(null);
   const [success, setSuccess] = useState(false);
 
-  //TODO 1) get the form from payload
+  //Get form from payload
 
   const formId = 1;
 
   useEffect(() => {
-    // Fetch the form configuration
+    // Fetch form configuration
     fetch(`/api/forms/${formId}`)
       .then((res) => res.json())
       .then((data) => {
         setCmsForm(data);
-        // console.log("cmsForm", data);
       })
       .catch((err) => setError("Error loading form"));
   }, [formId]);
 
-  // console.log(cmsForm);
-  // return;
-
-  //TODO handle form submission
+  // Handle form submission
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
 
-    // convert the form data to a json object, for fields that are not files
+    // Convert form data to a JSON object, for fields that are not files
     const dataToSend = Array.from(formData.entries()).map(([name, value]) => ({
       field: name,
       value: value.toString(),
     }));
 
-    // send the form data to payload
+    // Send the form data to payload
     const response = await fetch("/api/form-submissions", {
       method: "POST",
       body: JSON.stringify({
@@ -61,12 +57,10 @@ const ContactForm = () => {
       setSuccess(false);
     }
 
-    // reset the form
+    // Reset form
     formRef.current?.reset();
   };
 
-  //! What is this...
-  //! IMPORTANT LEAVE THIS IN, IF PULLED CMSFORM STRUCTURE FROM PAYLOAD FORMS COLLECTION
   if (!cmsForm) return <div>Loading...</div>;
 
   if (success && cmsForm.confirmationMessage) {
@@ -74,32 +68,45 @@ const ContactForm = () => {
       setSuccess(false);
     }, 5000);
     return (
-      <span className="block text-center mx-auto font-bold pb-8 pt-4 text-xl">
+      <span className="mx-auto block pt-4 pb-8 text-center text-xl font-bold">
         <RichText data={cmsForm.confirmationMessage} />
       </span>
     );
   }
 
-  //TODO render the form based on field types
+  // Render the form based on field types
   console.log(cmsForm.fields);
   return (
     <>
-      <div className="bg-white rounded-lg px-8 lg:px-12 pb-8 pt-2 text-remitech-turquoise text-sm">
-        <h3 id="FormRegisterInterest" className="text-4xl mb-8 mt-8 text-gray-900">
+      <div className="text-remitech-turquoise rounded-lg bg-white px-8 pt-2 pb-8 text-sm lg:px-12">
+        <h3
+          id="FormRegisterInterest"
+          className="mt-8 mb-8 text-4xl text-gray-900"
+        >
           Register Interest
         </h3>
         <form onSubmit={handleSubmit} action={emailCSV} ref={formRef}>
           {/* <label htmlFor={field.name}>{field.label}</label> */}
           <div className="flex flex-col items-start space-y-2">
             {cmsForm.fields.map((field, i) => {
-              //* UNCOMMENT ONLY FOR TESTING CSV emails field.required = false; //! TEMPORARY!!
               if (field.blockType === "checkbox") {
                 return (
                   <div key={i} className="mt-2 flex items-start">
-                    <input type={field.blockType} name={field.name} id={field.name} className="p-5 py-4 bg-white rounded-md" placeholder={field.label} required={field.required} />
-                    <label className="ml-3 pl-0 -mt-[2px] inline-block text-xs text-gray-900">
+                    <input
+                      type={field.blockType}
+                      name={field.name}
+                      id={field.name}
+                      className="rounded-md bg-white p-5 py-4"
+                      placeholder={field.label}
+                      required={field.required}
+                    />
+                    <label className="-mt-[2px] ml-3 inline-block pl-0 text-xs text-gray-900">
                       I agree to my data being handled in line with
-                      <a href="https://remitech.com/privacy/" className="whitespace-nowrap" target="_blank">
+                      <a
+                        href="https://remitech.com/privacy/"
+                        className="whitespace-nowrap"
+                        target="_blank"
+                      >
                         &nbsp;Remitech's privacy policy
                       </a>
                     </label>
@@ -107,8 +114,14 @@ const ContactForm = () => {
                 );
               } else if (field.blockType === "select") {
                 return (
-                  <select key={i} name={field.name} id={field.name} defaultValue="" required={field.required} className="cursor-pointer bg-btn py-2 px-4 text-white rounded-md mb-6 hover:bg-remitech-purple">
-                    {/* <option value="">Choose Event</option> */}
+                  <select
+                    key={i}
+                    name={field.name}
+                    id={field.name}
+                    defaultValue=""
+                    required={field.required}
+                    className="bg-btn hover:bg-remitech-purple mb-6 cursor-pointer rounded-md px-4 py-2 text-white"
+                  >
                     <option hidden disabled value="">
                       Select Event
                     </option>
@@ -126,20 +139,24 @@ const ContactForm = () => {
                     type={field.blockType}
                     name={field.name}
                     id={field.name}
-                    className="h-6 p-5 py-[18px] bg-white rounded-md w-full text-gray-900"
-                    style={{ borderOpacity: "0.2", border: "solid 1px #7fa6fb" }}
+                    className="h-6 w-full rounded-md bg-white p-5 py-[18px] text-gray-900"
+                    style={{
+                      borderOpacity: "0.2",
+                      border: "solid 1px #7fa6fb",
+                    }}
                     placeholder={field.label}
+                    // REACT INSERTS 'REQUIRED' IF REQUIRED=TRUE
                     required={field.required}
                   />
-                  // NOTE THIS, IN REACT IS VALID, REACT IS SMART, AND JUST PUTS 'REQUIRED', IF REQUIRED=TRUE
                 );
               }
             })}
           </div>
 
-          {/* note: it appears, that can to required={boolean} in React, but maybe not html */}
-
-          <button className="p-1 px-5 mt-5 bg-btn transition text-white hover:bg-remitech-purple font-bold text-base rounded-md cursor-pointer hover:scale-101 transform duration-200 ease-in" type="submit">
+          <button
+            className="bg-btn hover:bg-remitech-purple mt-5 transform cursor-pointer rounded-md p-1 px-5 text-base font-bold text-white transition duration-200 ease-in hover:scale-101"
+            type="submit"
+          >
             Send
           </button>
         </form>
