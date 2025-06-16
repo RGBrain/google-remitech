@@ -11,8 +11,8 @@ const Footer = () => {
           <RemitechContact />
 
           <div className="mr-3 basis-1/2 md:order-1 md:basis-1/3">
-            <ClickIcon className="-mt-[6px] mr-3 inline-block w-8" />
             <a href="https://remitech.com/privacy/" target="_blank">
+              <ClickIcon className="-mt-[4px] mr-3 inline-block w-6" />
               <span className="text-[10px] sm:text-xs lg:text-sm">
                 Remitech privacy policy
               </span>
