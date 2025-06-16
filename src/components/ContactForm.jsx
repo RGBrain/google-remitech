@@ -4,7 +4,8 @@ import React from "react";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import { useEffect, useRef } from "react";
 import { useState } from "react";
-// import cmsFormStructure from "./ContactFormStructure";
+import emailCSV from "@/lib/emailCSV";
+
 const ContactForm = () => {
   const [cmsForm, setCmsForm] = useState(null);
   const [error, setError] = useState(null);
@@ -87,10 +88,11 @@ const ContactForm = () => {
         <h3 id="FormRegisterInterest" className="text-4xl mb-8 mt-8 text-gray-900">
           Register Interest
         </h3>
-        <form onSubmit={handleSubmit} ref={formRef}>
+        <form onSubmit={handleSubmit} action={emailCSV} ref={formRef}>
           {/* <label htmlFor={field.name}>{field.label}</label> */}
           <div className="flex flex-col items-start space-y-2">
             {cmsForm.fields.map((field, i) => {
+              //* UNCOMMENT ONLY FOR TESTING CSV emails field.required = false; //! TEMPORARY!!
               if (field.blockType === "checkbox") {
                 return (
                   <div key={i} className="mt-2 flex items-start">
