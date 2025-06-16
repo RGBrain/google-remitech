@@ -9,13 +9,15 @@ const eventData = {};
 
 eventData.eventNum = 1;
 eventData.eventText = [];
-eventData.eventText.push(`Our dinners are a space for IT professionals across the Fintech sector — including Insuretech, Payment Platforms, Wealthtech, Lending, and more.`);
 eventData.eventText.push(
-  `The purpose? To connect, share experiences, and have open conversations about the challenges and successes of operating in a highly regulated industry. Each dinner is thoughtfully curated around a specific theme, designed to spark meaningful discussion and foster genuine peer-to-peer connections.`
+  `Our dinners are a space for IT professionals across the Fintech sector — including Insuretech, Payment Platforms, Wealthtech, Lending, and more.`,
+);
+eventData.eventText.push(
+  `The purpose? To connect, share experiences, and have open conversations about the challenges and successes of operating in a highly regulated industry. Each dinner is thoughtfully curated around a specific theme, designed to spark meaningful discussion and foster genuine peer-to-peer connections.`,
 );
 
 eventData.imageSrc = "/event1-image.png";
-eventData.imageAlt = "well made restaurant tables";
+eventData.imageAlt = "Restaurant";
 eventData.eventTitle = "Fintech";
 eventData.eventSubTitle = "Dinner Club";
 

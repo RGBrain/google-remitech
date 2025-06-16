@@ -10,31 +10,59 @@ import EventImage from "./EventImage";
 
 import { useRef } from "react";
 
-const EventTemplate = ({ eventData, textPos, lastEvent = false }) => {
+const EventTemplate = ({ eventData, textPos }) => {
   const textSlideFrom = textPos === "left" ? `bottomLeft` : `bottomRight`;
   const headingSlideFrom = textPos === "left" ? `left` : `right`;
 
   const thisEvent = useRef(null);
 
   return (
-    <article ref={thisEvent} className={`flex flex-col ${textPos === "left" ? `lg:mr-20` : `lg:ml-10`} my-18 lg:my-28 items-start space-y-5 lg:h-[765px] ${lastEvent === true ? `overflow-hidden pt-20 lg:pt-10 -mt-20 lg:-mt-6` : ``}`}>
-      <div className={`lg:relative lg:bottom-155 lg:order-2 self-stretch z-30 mt-24 lg:mt-0 lg:self-start ${textPos === "left" ? `lg:left-10` : `lg:left-106`}`}>
+    <article
+      ref={thisEvent}
+      className={`my-28 flex flex-col items-start lg:h-[965px] lg:w-[1000px]`}
+    >
+      {/* Blue Box */}
+      <div
+        className={`z-30 mt-24 self-stretch lg:relative lg:bottom-180 lg:order-2 lg:mt-0 lg:self-start ${textPos === "left" ? `lg:left-10` : `lg:left-106`}`}
+      >
         <ClientOnlyWrapper>
-          <SlideEventWrapper eventRef={thisEvent} slideFrom={headingSlideFrom} duration="0.7" delay="0.0">
-            <EventHeading eventTitle={eventData.eventTitle} eventSubTitle={eventData.eventSubTitle} />
+          <SlideEventWrapper
+            eventRef={thisEvent}
+            slideFrom={headingSlideFrom}
+            duration="0.7"
+            delay="0.0"
+          >
+            <EventHeading
+              eventTitle={eventData.eventTitle}
+              eventSubTitle={eventData.eventSubTitle}
+            />
           </SlideEventWrapper>
         </ClientOnlyWrapper>
       </div>
-      <div className={`w-full max-w-[500px] rounded-lg lg:order-1 h-[565px] z-10 self-center -mt-30 lg:-mt-0 ${textPos === "left" ? `lg:self-end` : `lg:self-start`}`}>
-        {/* THIS OUTER DIV JUST FOR THE IMAGE, maybe gives a bit more control on image width */}
+
+      {/* Image */}
+      <div
+        className={`z-10 -mt-30 h-150 w-full self-center lg:-mt-0 lg:h-[785px] lg:max-w-[540px] ${textPos === "left" ? `lg:mx-16 lg:self-end` : `lg:self-start`} `}
+      >
         <FadeTextWrapper>
-          <EventImage imageSrc={eventData.imageSrc} imageAlt={eventData.imageAlt} />
+          <EventImage
+            imageSrc={eventData.imageSrc}
+            imageAlt={eventData.imageAlt}
+          />
         </FadeTextWrapper>
       </div>
 
-      <div className={`lg:relative lg:bottom-254 lg:order-3 z-40 -mt-3 lg:-mt-0 ${textPos === "left" ? `lg:left-23` : `lg:left-119`}`}>
+      {/* White Box */}
+      <div
+        className={`z-40 -mt-3 lg:relative lg:bottom-295 lg:order-3 lg:-mt-0 ${textPos === "left" ? `lg:left-23` : `lg:left-119`}`}
+      >
         <ClientOnlyWrapper>
-          <SlideEventWrapper eventRef={thisEvent} slideFrom={textSlideFrom} duration="0.7" delay="0.2">
+          <SlideEventWrapper
+            eventRef={thisEvent}
+            slideFrom={textSlideFrom}
+            duration="0.7"
+            delay="0.2"
+          >
             <EventText eventText={eventData.eventText} />
           </SlideEventWrapper>
         </ClientOnlyWrapper>

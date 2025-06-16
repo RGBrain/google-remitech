@@ -9,18 +9,24 @@ const eventData = {};
 
 eventData.eventNum = 3;
 eventData.eventText = [];
-eventData.eventText.push(`Join Remitech with fellow CISOs and security leaders for an evening of networking, great food, and world-class entertainment—right from the luxury of our VIP suite at The O2 Arena.`);
+eventData.eventText.push(
+  `Join Remitech with fellow CISOs and security leaders for an evening of networking, great food, and world-class entertainment—right from the luxury of our VIP suite at The O2 Arena.`,
+);
 eventData.eventText.push(`🎤 Lady Gaga – 30th September 2025`);
 eventData.eventText.push(`🎼 Hans Zimmer – 1st December 2025`);
-eventData.eventText.push(`Spaces are extremely limited—just 14 spots per event—and will be allocated on a first come, first served basis. Please register interest below.`);
+eventData.eventText.push(
+  `Spaces are extremely limited—just 14 spots per event—and will be allocated on a first come, first served basis. Please register interest below.`,
+);
 
-eventData.imageSrc = "/event3-image.png";
+eventData.imageSrc = "/event3-image.jpg";
 eventData.imageAlt = "O2 Arena";
-eventData.eventTitle = `CISO <span style="position:relative; top:-6px; line-height: 1.15;">@</span> <span style="white-space: nowrap;">The O2 Club</span>`;
+eventData.eventTitle = `C-Suite <span style="position:relative; top:-6px; line-height: 1.15;">@</span> <span style="white-space: nowrap;">The O2 Suite</span>`;
 eventData.eventSubTitle = "Lady Gaga | Hans Zimmer";
 
 const Event3 = () => {
-  return <EventTemplate eventData={eventData} textPos="right" lastEvent={true} />;
+  return (
+    <EventTemplate eventData={eventData} textPos="right" lastEvent={true} />
+  );
 };
 
 export default Event3;
