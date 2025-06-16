@@ -2,8 +2,6 @@ import SectionOne from "../../components/SectionOne";
 import SectionTwo from "@/components/SectionTwo";
 import SectionThree from "@/components/SectionThree";
 import SectionFour from "@/components/SectionFour";
-import SectionFive from "@/components/SectionFive";
-import SectionSeven from "@/components/SectionSeven";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FadeTextWrapper from "@/components/FadeTextWrapper";

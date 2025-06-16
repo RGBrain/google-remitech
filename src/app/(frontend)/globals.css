@@ -3,8 +3,6 @@
 :root {
   --background: #ffffff;
   --foreground: #000000;
-  --off-white: #f2f2f2;
-  --grey: #757477;
   --remitech-purple: #7b68eb;
   --remitech-turquoise: #01bbd5;
   --btn: #2a6af9;
@@ -15,9 +13,6 @@
   --color-foreground: var(--foreground);
   --color-btn: var(--btn);
   --color-btn-hover: var(--btn-hover);
-  --color-off-white: var(--off-white);
-  --color-td-footer: var(--td-footer);
-  --color-grey: var(--grey);
   --font-mono: var(--font-geist-mono);
   --color-remitech-purple: var(--remitech-purple);
   --color-remitech-turquoise: var(--remitech-turquoise);
@@ -36,15 +31,13 @@
 }
 
 html {
-  scroll-padding-top: 80px;
+  scroll-padding-top: 150px;
+  /* this is so that when click button "Register Interest", the header does not hide the form */
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-}
-
-body {
 }
 
 a {
@@ -61,8 +54,4 @@ a:active {
 
 button:active {
   background-color: var(--color-remitech-turquoise);
-}
-
-html {
-  scroll-padding-top: 150px;
 }
