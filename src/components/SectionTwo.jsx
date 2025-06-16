@@ -15,7 +15,7 @@ const SectionTwo = () => {
               <b className="font-bold text-black lg:text-lg">Gemini</b> for Google Workspace
             </span>
 
-            <h2 className="text-4xl md:text-7xl lg:text-7xl bg-gradient-to-r from-[#4785f5] from-30% to-[#d36173] text-transparent bg-clip-text pb-1 pt-6 lg:pr-8 lg:pt-9 lg:leading-20">
+            <h2 className="text-4xl md:text-7xl lg:text-7xl bg-gradient-to-r from-[#4785f5] from-30% to-[#d36173] text-transparent bg-clip-text pb-3 pt-6 lg:pr-8 lg:pt-9 lg:leading-20">
               Prompting <br />
               guide 101
             </h2>
