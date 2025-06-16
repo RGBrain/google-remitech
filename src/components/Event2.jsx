@@ -16,7 +16,7 @@ eventData.eventText.push(
   `Spaces are limited, so please register below to secure your place.`
 );
 
-eventData.imageSrc = "/event2-image.png";
+eventData.imageSrc = "/event2-image.jpg";
 eventData.imageAlt = "London Skyline";
 eventData.eventTitle = "Rooftop BBQ";
 eventData.eventSubTitle = `An Evening with Remitech`;

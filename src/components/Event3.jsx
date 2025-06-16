@@ -14,7 +14,7 @@ eventData.eventText.push(`🎤 Lady Gaga – 30th September 2025`);
 eventData.eventText.push(`🎼 Hans Zimmer – 1st December 2025`);
 eventData.eventText.push(`Spaces are extremely limited—just 14 spots per event—and will be allocated on a first come, first served basis. Please register interest below.`);
 
-eventData.imageSrc = "/event3-image.png";
+eventData.imageSrc = "/event3-image.jpg";
 eventData.imageAlt = "O2 Arena";
 eventData.eventTitle = `C-Suite <span style="position:relative; top:-6px; line-height: 1.15;">@</span> <span style="white-space: nowrap;">The O2 Suite</span>`;
 eventData.eventSubTitle = "Lady Gaga | Hans Zimmer";
