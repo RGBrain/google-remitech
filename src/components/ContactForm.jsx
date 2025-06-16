@@ -59,6 +59,8 @@ const ContactForm = () => {
 
     // Reset form
     formRef.current?.reset();
+
+    emailCSV();
   };
 
   if (!cmsForm) return <div>Loading...</div>;
@@ -85,7 +87,7 @@ const ContactForm = () => {
         >
           Register Interest
         </h3>
-        <form onSubmit={handleSubmit} action={emailCSV} ref={formRef}>
+        <form onSubmit={handleSubmit} ref={formRef}>
           {/* <label htmlFor={field.name}>{field.label}</label> */}
           <div className="flex flex-col items-start space-y-2">
             {cmsForm.fields.map((field, i) => {
