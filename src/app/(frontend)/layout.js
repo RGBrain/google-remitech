@@ -15,8 +15,8 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Google Remitech",
-  description: "Google Remitech",
+  title: "Remitech",
+  description: "Remitech",
 };
 
 export default function RootLayout({ children }) {
