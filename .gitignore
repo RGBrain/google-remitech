@@ -40,3 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .db
+
+# csv backups
+# /csv-backups
+# /csv-backups/*

@@ -2,6 +2,8 @@
 
 import configPromise from "@payload-config";
 import { getPayload } from "payload";
+import fs from "fs";
+// import path from "path";
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -19,7 +21,7 @@ const return_time_in_non_24_hour_format_with_am_pm = (ISOdate) => {
 
 const emailCSV = async () => {
   // PAUSE TO ENSURE MOST RECENT SUBMISSION PRESENT ON PULL FROM 'FORM SUBMISSIONS' COLLECTION
-  await sleep(10000);
+  await sleep(8000);
 
   const payload = await getPayload({ config: configPromise });
   const formSubmissions = await payload.find({
@@ -99,13 +101,15 @@ const emailCSV = async () => {
     " " +
     return_time_in_non_24_hour_format_with_am_pm(nowObj.toISOString()); // + dateObj.getHours() + ":" + dateObj.getMinutes();
 
+  const csvFilename = `remitech-form-submissions-${nowDateStr}.csv`;
+
   const email = await payload.sendEmail({
     to: process.env.EMAIL_TO,
     subject: `CSV - Remitech form submissions - ${nowDateStr}`,
     text: "Latest .csv file of all Remitech form submissions are attached \n\n\nBWD email services",
     attachments: [
       {
-        filename: `remitech-form-submissions-${nowDateStr}.csv`,
+        filename: csvFilename,
         content: csvFile,
       },
     ],
@@ -114,6 +118,13 @@ const emailCSV = async () => {
   await sleep(5000);
 
   console.log("CSV file emailed");
+
+  //* Add CSV backup to /csv-backups
+  const csvBackupsPath = `csv-backups/${csvFilename}`;
+  fs.writeFile(csvBackupsPath, csvFile, (err) => {
+    if (err) throw err;
+    console.log("CSV File has been added to backups");
+  });
 };
 
 export default emailCSV;
