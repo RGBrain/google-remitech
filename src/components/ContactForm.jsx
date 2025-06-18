@@ -5,6 +5,7 @@ import { RichText } from "@payloadcms/richtext-lexical/react";
 import { useEffect, useRef } from "react";
 import { useState } from "react";
 import emailCSV from "@/lib/emailCSV";
+import { track } from "@vercel/analytics";
 
 const ContactForm = () => {
   const [cmsForm, setCmsForm] = useState(null);
@@ -30,6 +31,10 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // first add vercel analytics 'custom event'
+    track("SubmitForm");
+
     const formData = new FormData(e.currentTarget);
 
     // Convert form data to a JSON object, for fields that are not files
