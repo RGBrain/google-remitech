@@ -7,6 +7,20 @@ import { useState } from "react";
 import emailCSV from "@/lib/emailCSV";
 import { track } from "@vercel/analytics";
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function download(href, filename = "") {
+  const a = document.createElement("a");
+
+  a.href = href;
+
+  a.download = filename;
+
+  a.click();
+}
+
 const GateForm = () => {
   const [cmsForm, setCmsForm] = useState(null);
   const [error, setError] = useState(null);
@@ -32,7 +46,7 @@ const GateForm = () => {
     e.preventDefault();
 
     // first add vercel analytics 'custom event'
-    track("SubmitForm");
+    track("GateForm");
 
     const formData = new FormData(e.currentTarget);
 
@@ -61,10 +75,12 @@ const GateForm = () => {
       setSuccess(false);
     }
 
+    await sleep(3000);
+
+    download("/Prompting-Guide-101-Remitech.pdf");
+
     // Reset form
     formRef.current?.reset();
-
-    emailCSV();
   };
 
   if (!cmsForm) return <div>Loading...</div>;
