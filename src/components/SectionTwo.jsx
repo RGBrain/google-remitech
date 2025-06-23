@@ -1,8 +1,10 @@
 import React from "react";
-import BtnPDFWithIcon from "@/components/BtnPDFWithIcon";
 import FadeTextWrapper from "@/components/FadeTextWrapper";
 import SlideElementWrapper from "@/components/SlideElementWrapper";
 import ClientOnlyWrapper from "@/components/ClientOnlyWrapper";
+import GateForm from "@/components/GateForm";
+import BtnPDFGate from "./BtnPDFGate";
+import Image from "next/image";
 
 const SectionTwo = () => {
   return (
@@ -10,46 +12,52 @@ const SectionTwo = () => {
       id="s2"
       className="from-remitech-purple to-remitech-turquoise min-h-120 bg-gradient-to-tr to-85%"
     >
-      <div className="mx-auto flex max-w-[800px] flex-col items-start space-y-5 px-4 py-8 lg:h-[590px]">
-        <FadeTextWrapper>
-          <div className="mb-6 rounded-lg bg-white p-4">
-            <span className="text-[#757575]">
-              <b className="font-bold text-black lg:text-lg">Gemini</b> for
-              Google Workspace
-            </span>
+      <div className="mx-auto flex max-w-[800px] flex-col items-start space-y-5 px-4 py-8 lg:flex-row lg:flex-wrap">
+        <div className="text-white lg:mr-8 lg:shrink-0 lg:grow-1 lg:basis-2/5">
+          <h2 className="mb-4 text-3xl font-bold">
+            Gemini for Google Workspace Prompt Guide
+          </h2>
+          <p>
+            Download this quick-start handbook and learn about writing effective
+            prompts to supercharge your productivity using Gemini for Workspace.
+          </p>
+          <BtnPDFGate />
+        </div>
 
-            <h2 className="bg-gradient-to-r from-[#4785f5] from-30% to-[#d36173] bg-clip-text pt-6 pb-3 text-4xl text-transparent md:text-7xl lg:pt-9 lg:pr-8 lg:text-7xl lg:leading-20">
-              Prompting <br />
-              guide 101
-            </h2>
-          </div>
+        <div className="mt-8 mb-12 lg:shrink-0 lg:grow-1 lg:basis-2/5">
+          <Image
+            src="/prompting-guide-101-cover.jpg"
+            alt="Prompting Guide Cover"
+            width={200}
+            height={200}
+          />
+        </div>
 
-          <BtnPDFWithIcon />
-        </FadeTextWrapper>
-        <ClientOnlyWrapper>
-          <SlideElementWrapper slideFrom="right" duration="0.7">
-            <div className="bg-btn bottom-43 left-86 rounded-lg px-5 py-6 text-sm font-medium text-white sm:w-[500px] lg:relative">
-              <h4 className="pb-4 text-lg font-bold">
-                Do your best work with Gemini for Workspace
-              </h4>
+        <div className="mr-8 text-white lg:shrink-0 lg:grow-1 lg:basis-2/5">
+          <h3 className="mb-4 text-2xl font-bold">
+            Do your best work with Gemini for Workspace
+          </h3>
+          <p className="mb-4">
+            Gemini for Workspace helps you work smarter, not harder, increasing
+            productivity and saving time so you can focus on higher&#8209;impact
+            work. This guide explores different ways to quickly jump in and gain
+            mastery of the basics to help you accomplish your
+            day&#8209;to&#8209;day tasks. 
+          </p>
+          <p className="mb-4">
+            Explore foundational skills for writing effective prompts organized
+            by role and use case. While the possibilities are virtually endless,
+            there are consistent best practices that you can put to use today —
+            dive in!
+          </p>
+        </div>
 
-              <p className="pb-4">
-                Gemini for Workspace helps you work smarter, not harder,
-                increasing productivity and saving time so you can focus on
-                higher-impact work. This guide explores different ways to
-                quickly jump in and gain mastery of the basics to help you
-                accomplish your day-to-day tasks.
-              </p>
-
-              <p className="pb-1">
-                Explore foundational skills for writing effective prompts
-                organized by role and use case. While the possibilities are
-                virtually endless, there are consistent best practices that you
-                can put to use today — dive in!
-              </p>
-            </div>
-          </SlideElementWrapper>
-        </ClientOnlyWrapper>
+        <div
+          id="divFormGate"
+          className="mt-8 self-stretch rounded-lg bg-white p-4 lg:mt-0 lg:shrink-0 lg:grow-1 lg:basis-2/5 lg:p-1"
+        >
+          <GateForm />
+        </div>
       </div>
     </section>
   );

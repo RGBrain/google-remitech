@@ -4,8 +4,8 @@ import React from "react";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import { useEffect, useRef } from "react";
 import { useState } from "react";
-import emailCSV from "@/lib/emailCSV";
 import { track } from "@vercel/analytics";
+import countrySelectOptions from "@/lib/countrySelectOptions";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
@@ -13,19 +13,27 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-const ContactForm = () => {
+function download(href, filename = "") {
+  const a = document.createElement("a");
+
+  a.href = href;
+
+  a.download = filename;
+
+  a.click();
+}
+
+const GateForm = () => {
   const [cmsForm, setCmsForm] = useState(null);
   const [error, setError] = useState(null);
   const formRef = useRef(null);
   const [success, setSuccess] = useState(false);
 
   //Get form from payload
-
-  const formId = 1;
+  const formId = 2;
 
   useEffect(() => {
     //* Use this code when testing form skeleton layout
-
     // async function fetchForm() {
     //   try {
     //     const response = await fetch(`/api/forms/${formId}`);
@@ -39,10 +47,8 @@ const ContactForm = () => {
     //     setError("Error loading form");
     //   }
     // }
-
     // fetchForm();
 
-    // Fetch form configuration
     fetch(`/api/forms/${formId}`)
       .then((res) => res.json())
       .then((data) => {
@@ -57,7 +63,7 @@ const ContactForm = () => {
     e.preventDefault();
 
     // first add vercel analytics 'custom event'
-    track("ContactFormSubmit");
+    track("GateFormSubmit");
 
     const formData = new FormData(e.currentTarget);
 
@@ -86,16 +92,18 @@ const ContactForm = () => {
       setSuccess(false);
     }
 
+    // await sleep(3000);
+
+    download("/Prompting-Guide-101-Remitech.pdf");
+
     // Reset form
     formRef.current?.reset();
-
-    emailCSV();
   };
 
   if (!cmsForm)
     return (
-      <div className="w-140 rounded-lg bg-white px-8 py-22 pt-26 text-sm lg:px-12">
-        <Skeleton count={7} height={35} className="my-2" />
+      <div className="w-full px-8 py-20 lg:px-12">
+        <Skeleton count={7} height={35} className="my-2 w-full" />
       </div>
     );
 
@@ -114,12 +122,15 @@ const ContactForm = () => {
   console.log(cmsForm.fields);
   return (
     <>
-      <div className="text-remitech-turquoise rounded-lg bg-white px-8 pt-2 pb-8 text-sm lg:px-12">
+      <div
+        id="downloadPDF"
+        className="text-remitech-turquoise rounded-lg bg-white px-8 pt-2 pb-8 text-sm lg:px-12"
+      >
         <h3
           id="FormRegisterInterest"
-          className="mt-8 mb-8 text-4xl text-gray-900"
+          className="mt-8 mb-8 text-2xl text-gray-900"
         >
-          Register Interest
+          Download Now
         </h3>
         <form onSubmit={handleSubmit} ref={formRef}>
           {/* <label htmlFor={field.name}>{field.label}</label> */}
@@ -127,7 +138,7 @@ const ContactForm = () => {
             {cmsForm.fields.map((field, i) => {
               if (field.blockType === "checkbox") {
                 return (
-                  <div key={i} className="mt-2 flex items-start">
+                  <div key={i} className="mt-1 flex items-start">
                     <input
                       type={field.blockType}
                       name={field.name}
@@ -148,7 +159,8 @@ const ContactForm = () => {
                     </label>
                   </div>
                 );
-              } else if (field.blockType === "select") {
+              } else if (field.name == "country") {
+                field.options = countrySelectOptions;
                 return (
                   <select
                     key={i}
@@ -156,11 +168,12 @@ const ContactForm = () => {
                     id={field.name}
                     defaultValue=""
                     required={field.required}
-                    className="bg-btn hover:bg-remitech-purple mb-6 cursor-pointer rounded-md px-4 py-2 text-white"
+                    className="mb-6 w-full cursor-pointer rounded-md bg-white px-4 py-2 text-gray-900"
+                    style={{
+                      borderOpacity: "0.2",
+                      border: "solid 1px #7fa6fb",
+                    }}
                   >
-                    <option hidden disabled value="">
-                      Select Event
-                    </option>
                     {field.options.map((eventObj, i) => (
                       <option key={i} value={eventObj.value}>
                         {eventObj.label}
@@ -169,6 +182,9 @@ const ContactForm = () => {
                   </select>
                 );
               } else {
+                field.name === "contactNumber" ? (field.blockType = "tel") : "";
+                //TODO  add this logic to ContactForm component also, to allow Contact Number validation there?
+
                 return (
                   <input
                     key={i}
@@ -193,7 +209,7 @@ const ContactForm = () => {
             className="bg-btn hover:bg-remitech-purple mt-5 transform cursor-pointer rounded-md p-1 px-5 text-base font-bold text-white transition duration-200 ease-in hover:scale-101"
             type="submit"
           >
-            Send
+            Submit
           </button>
         </form>
       </div>
@@ -201,4 +217,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
+export default GateForm;
