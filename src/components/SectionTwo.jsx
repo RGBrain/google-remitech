@@ -54,7 +54,7 @@ const SectionTwo = () => {
 
         <div
           id="divFormGate"
-          className="mt-8 rounded-lg bg-white p-4 lg:mt-0 lg:shrink-0 lg:grow-1 lg:basis-2/5 lg:p-1"
+          className="mt-8 self-stretch rounded-lg bg-white p-4 lg:mt-0 lg:shrink-0 lg:grow-1 lg:basis-2/5 lg:p-1"
         >
           <GateForm />
         </div>

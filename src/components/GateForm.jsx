@@ -6,6 +6,8 @@ import { useEffect, useRef } from "react";
 import { useState } from "react";
 import { track } from "@vercel/analytics";
 import countrySelectOptions from "@/lib/countrySelectOptions";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -31,7 +33,22 @@ const GateForm = () => {
   const formId = 2;
 
   useEffect(() => {
-    // Fetch form configuration
+    //* Use this code when testing form skeleton layout
+    // async function fetchForm() {
+    //   try {
+    //     const response = await fetch(`/api/forms/${formId}`);
+    //     if (!response.ok) {
+    //       throw new Error("Network response was not ok");
+    //     }
+    //     const data = await response.json();
+    //     await sleep(8000);
+    //     setCmsForm(data);
+    //   } catch (err) {
+    //     setError("Error loading form");
+    //   }
+    // }
+    // fetchForm();
+
     fetch(`/api/forms/${formId}`)
       .then((res) => res.json())
       .then((data) => {
@@ -83,7 +100,12 @@ const GateForm = () => {
     formRef.current?.reset();
   };
 
-  if (!cmsForm) return <div>Loading...</div>;
+  if (!cmsForm)
+    return (
+      <div className="w-full px-8 py-20 lg:px-12">
+        <Skeleton count={7} height={35} className="my-2 w-full" />
+      </div>
+    );
 
   if (success && cmsForm.confirmationMessage) {
     setTimeout(() => {
