@@ -12,24 +12,25 @@ const SectionTwo = () => {
       id="s2"
       className="from-remitech-purple to-remitech-turquoise min-h-120 bg-gradient-to-tr to-85%"
     >
-      <div className="mx-auto flex max-w-[800px] flex-col items-start space-y-5 px-4 py-8 lg:flex-row lg:flex-wrap">
+      <div className="mx-auto flex max-w-[1000px] flex-col items-start space-y-5 px-4 py-8 lg:flex-row lg:flex-wrap lg:py-12">
         <div className="text-white lg:mr-8 lg:shrink-0 lg:grow-1 lg:basis-2/5">
           <h2 className="mb-4 text-3xl font-bold">
             Gemini for Google Workspace Prompt Guide
           </h2>
-          <p>
+          <p className="mb-6">
             Download this quick-start handbook and learn about writing effective
             prompts to supercharge your productivity using Gemini for Workspace.
           </p>
           <BtnPDFGate />
         </div>
 
-        <div className="mt-8 mb-12 lg:shrink-0 lg:grow-1 lg:basis-2/5">
+        <div className="mt-8 mb-12 lg:mt-0 lg:ml-16 lg:shrink-0 lg:grow-1 lg:basis-2/5">
           <Image
             src="/prompting-guide-101-cover.jpg"
             alt="Prompting Guide Cover"
-            width={200}
-            height={200}
+            width={250}
+            height={250}
+            className="lg:ml-10"
           />
         </div>
 
@@ -54,7 +55,7 @@ const SectionTwo = () => {
 
         <div
           id="divFormGate"
-          className="mt-8 self-stretch rounded-lg bg-white p-4 lg:mt-0 lg:shrink-0 lg:grow-1 lg:basis-2/5 lg:p-1"
+          className="mt-8 self-stretch rounded-lg bg-white p-4 lg:mt-0 lg:ml-16 lg:shrink-0 lg:grow-1 lg:basis-2/5 lg:p-1"
         >
           <GateForm />
         </div>
