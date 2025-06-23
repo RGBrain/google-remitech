@@ -33,7 +33,7 @@ const ContactForm = () => {
     e.preventDefault();
 
     // first add vercel analytics 'custom event'
-    track("SubmitForm");
+    track("ContactFormSubmit");
 
     const formData = new FormData(e.currentTarget);
 

@@ -4,8 +4,8 @@ import React from "react";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import { useEffect, useRef } from "react";
 import { useState } from "react";
-import emailCSV from "@/lib/emailCSV";
 import { track } from "@vercel/analytics";
+import countrySelectOptions from "@/lib/countrySelectOptions";
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -46,7 +46,7 @@ const GateForm = () => {
     e.preventDefault();
 
     // first add vercel analytics 'custom event'
-    track("GateForm");
+    track("GateFormSubmit");
 
     const formData = new FormData(e.currentTarget);
 
@@ -75,7 +75,7 @@ const GateForm = () => {
       setSuccess(false);
     }
 
-    await sleep(3000);
+    // await sleep(3000);
 
     download("/Prompting-Guide-101-Remitech.pdf");
 
@@ -100,7 +100,10 @@ const GateForm = () => {
   console.log(cmsForm.fields);
   return (
     <>
-      <div className="text-remitech-turquoise rounded-lg bg-white px-8 pt-2 pb-8 text-sm lg:px-12">
+      <div
+        id="downloadPDF"
+        className="text-remitech-turquoise rounded-lg bg-white px-8 pt-2 pb-8 text-sm lg:px-12"
+      >
         <h3
           id="FormRegisterInterest"
           className="mt-8 mb-8 text-2xl text-gray-900"
@@ -134,7 +137,8 @@ const GateForm = () => {
                     </label>
                   </div>
                 );
-              } else if (field.blockType === "select") {
+              } else if (field.name == "country") {
+                field.options = countrySelectOptions;
                 return (
                   <select
                     key={i}
@@ -142,7 +146,7 @@ const GateForm = () => {
                     id={field.name}
                     defaultValue=""
                     required={field.required}
-                    className="bg-btn hover:bg-remitech-purple mb-6 cursor-pointer rounded-md px-4 py-2 text-white"
+                    className="bg-btn hover:bg-remitech-purple mb-6 w-40 cursor-pointer rounded-md px-4 py-2 text-white"
                   >
                     {field.options.map((eventObj, i) => (
                       <option key={i} value={eventObj.value}>
