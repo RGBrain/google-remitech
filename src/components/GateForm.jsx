@@ -146,7 +146,11 @@ const GateForm = () => {
                     id={field.name}
                     defaultValue=""
                     required={field.required}
-                    className="bg-btn hover:bg-remitech-purple mb-6 w-40 cursor-pointer rounded-md px-4 py-2 text-white"
+                    className="mb-6 w-full cursor-pointer rounded-md bg-white px-4 py-2 text-gray-900"
+                    style={{
+                      borderOpacity: "0.2",
+                      border: "solid 1px #7fa6fb",
+                    }}
                   >
                     {field.options.map((eventObj, i) => (
                       <option key={i} value={eventObj.value}>
