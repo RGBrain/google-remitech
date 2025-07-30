@@ -126,10 +126,7 @@ const GateForm = () => {
         id="downloadPDF"
         className="text-remitech-turquoise rounded-lg bg-white px-8 pt-2 pb-8 text-sm lg:px-12"
       >
-        <h3
-          id="FormRegisterInterest"
-          className="mt-8 mb-8 text-2xl text-gray-900"
-        >
+        <h3 id="FormDownloadGate" className="mt-8 mb-8 text-2xl text-gray-900">
           Download Now
         </h3>
         <form onSubmit={handleSubmit} ref={formRef}>
